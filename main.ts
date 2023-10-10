@@ -1,8 +1,42 @@
-/* Copyright (c) 2020 MTHS All rights reserved
+/* Copyright (c) 2023 MTHS All rights reserved
  *
- * Created by: Mr. Coxall
- * Created on: Sep 2020
- * This program ...
+ * Created by: Giordan Zeina
+ * Created on: Oct 2023
+ * This program plays rock, paper, scissors on a Micro:Bit
 */
 
-basic.showString('Hello, World!')
+// variables
+let randomNumber: number = 0
+
+randomNumber = -1
+basic.clearScreen()
+basic.showIcon(IconNames.Happy)
+
+input.onGesture(Gesture.Shake, function() {
+  randomNumber = randint(0,2)
+  basic.clearScreen()
+
+  // if randomNumber is 0
+  if (randomNumber == 0)
+  basic.showIcon(IconNames.Scissors)
+
+  // if randomNumber is 1
+  if (randomNumber == 1)
+  basic.showIcon(images.createImage(`
+. . . . .
+. # # # .
+. # # # .
+. # # # .
+. . . . .
+`))
+
+// if randomNumber is 2
+if (randomNumber == 2)
+basic.showIcon(images.createImage(`
+# # # # #
+# . . . #
+# . . . #
+# . . . #
+# # # # #
+`))
+}
