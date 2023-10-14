@@ -6,8 +6,8 @@
 */
 
 // variables
-let randomNumber: number = 0
-
+let randomNumber : number = 0
+let score : number = 0
 randomNumber = -1
 basic.clearScreen()
 basic.showIcon(IconNames.Happy)
@@ -17,26 +17,37 @@ input.onGesture(Gesture.Shake, function() {
   basic.clearScreen()
 
   // if randomNumber is 0
-  if (randomNumber == 0)
-  basic.showIcon(IconNames.Scissors)
+  if (randomNumber == 0) {
+    basic.showIcon(IconNames.Scissors)
+  }
 
   // if randomNumber is 1
-  if (randomNumber == 1)
-  basic.showIcon(images.createImage(`
-. . . . .
-. # # # .
-. # # # .
-. # # # .
-. . . . .
-`))
+  if (randomNumber == 1) {
+    basic.showLeds(`
+    . . . . .
+    . # # # .
+    . # # # .
+    . # # # .
+    . . . . .
+    `)
+  }
 
-// if randomNumber is 2
-if (randomNumber == 2)
-basic.showIcon(images.createImage(`
-# # # # #
-# . . . #
-# . . . #
-# . . . #
-# # # # #
-`))
-}
+  // if randomNumber is 2
+  if (randomNumber == 2) {
+    basic.showLeds(`
+    # # # # #
+    # . . . #
+    # . . . #
+    # . . . #
+    # # # # #
+    `)
+  }
+})
+
+input.onButtonPressed(Button.A, function() {
+  score = score + 1
+})
+
+input.onButtonPressed(Button.B, function() {
+  basic.showNumber(score)
+})
