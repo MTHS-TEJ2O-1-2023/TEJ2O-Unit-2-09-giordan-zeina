@@ -19,6 +19,8 @@ input.onGesture(Gesture.Shake, function () {
   // if randomNumber is 0
   if (randomNumber === 0) {
     basic.showIcon(IconNames.Scissors)
+    basic.pause(5000)
+    basic.showIcon(IconNames.Happy)
   }
 
   // if randomNumber is 1
@@ -30,6 +32,8 @@ input.onGesture(Gesture.Shake, function () {
     . # # # .
     . . . . .
     `)
+    basic.pause(5000)
+    basic.showIcon(IconNames.Happy)
   }
 
   // if randomNumber is 2
@@ -41,6 +45,8 @@ input.onGesture(Gesture.Shake, function () {
     # . . . #
     # # # # #
     `)
+    basic.pause(5000)
+    basic.showIcon(IconNames.Happy)
   }
 })
 
