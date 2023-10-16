@@ -52,8 +52,10 @@ input.onGesture(Gesture.Shake, function () {
 
 input.onButtonPressed(Button.A, function () {
   score = score + 1
+  basic.showIcon(IconNames.Yes)
 })
 
 input.onButtonPressed(Button.B, function () {
+  basic.showString('Score is') 
   basic.showNumber(score)
 })
